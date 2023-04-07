@@ -3,8 +3,8 @@
 Modified flightmare for the paper Learning to Fly in the Wild
 
 ## installation
-### 1. 功能包准备
-下载flights_autonomy_flightmare和assimp_catkin
+### 1. package preparation
+download flights_autonomy_flightmare and assimp_catkin.
 ```
 mkdir flights_autonomy_flightmare_ws
 cd flights_autonomy_flightmare_ws
@@ -13,9 +13,9 @@ cd src
 git clone https://github.com/antonilo/flightmare_agile_autonomy.git
 git clone https://github.com/uzh-rpg/assimp_catkin.git
 ```
-把原本的flightmare下的catkin_simple、eigen_catkin、mav_comm拷贝过来
-### 2. 依赖安装
-安装glfw
+copy catkin_simple, eigen_catkin & mav_comm from flightmare_ws to current directory.
+### 2. dependencies installation
+install glfw.
 ```
 git clone https://github.com/glfw/glfw.git
 cd glfw
@@ -24,17 +24,19 @@ cmake ..
 make -j4
 sudo make install
 ```
-安装glm
+install glm.
 ```
 sudo apt-get update
 sudo apt-get install -y libglm-dev
 ```
-### 2. 修改
-在rpgq_simulator/CMakeLists.txt里面第18行后面添加
+### 3. source code modification
+add following line after line 18 at rpgq_simulator/CMakeLists.txt.
 ```
 include_directories(${CMAKE_BINARY_DIR}/rpgq_simulator/configuration)
 ```
-### 3. 编译
+### 4. flightrender download
+download unity standalone.tar from here[https://zenodo.org/record/5517791/files/standalone.tar?download=1] & unzip into flightrender directory.
+### 5. build
 ```
 cd flights_autonomy_flightmare_ws
 catkin build assimp_catkin
