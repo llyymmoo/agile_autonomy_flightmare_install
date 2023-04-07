@@ -15,6 +15,7 @@ git clone https://github.com/uzh-rpg/assimp_catkin.git
 ```
 把原本的flightmare下的catkin_simple、eigen_catkin、mav_comm拷贝过来
 ### 2. 依赖安装
+安装glfw
 ```
 git clone https://github.com/glfw/glfw.git
 cd glfw
@@ -22,6 +23,11 @@ mkdir build
 cmake ..
 make -j4
 sudo make install
+```
+安装glm
+```
+sudo apt-get update
+sudo apt-get install -y libglm-dev
 ```
 ### 2. 修改
 在rpgq_simulator/CMakeLists.txt里面第18行后面添加
